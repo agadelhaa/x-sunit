@@ -2,7 +2,7 @@ class Api::V1::SurvivorsController < Api::V1::BaseController
   before_action :set_survivor, only: %i[show update]
 
   def index
-    @survivors = Survivor.all
+    @survivors = Survivor.all.order("name ASC")
   end
 
   def show
@@ -23,6 +23,20 @@ class Api::V1::SurvivorsController < Api::V1::BaseController
     else
       render_error
     end
+  end
+
+  def percentage_of_abducted
+    total = Survivor.all.count
+    abducted = Survivor.where(abducted: true).count
+    result = (abducted / total.to_f) * 100
+    @percentage = "#{result.to_i}%"
+  end
+
+  def percentage_of_non_abducted
+    total = Survivor.all.count
+    non_abducted = Survivor.where(abducted: false).count
+    result = (non_abducted / total.to_f) * 100
+    @percentage = "#{result.to_i}%"
   end
 
   private

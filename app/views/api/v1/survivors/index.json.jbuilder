@@ -1,1 +1,1 @@
-json.array! @survivors, :id, :name, :abducted
+json.array! @survivors, :name, :abducted, :id
