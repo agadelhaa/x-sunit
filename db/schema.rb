@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_19_183832) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_20_143530) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_19_183832) do
     t.integer "abducted_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["survivor_id", "abducted_id"], name: "index_abductions_on_survivor_id_and_abducted_id", unique: true
   end
 
   create_table "survivors", force: :cascade do |t|
@@ -26,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_19_183832) do
     t.integer "age"
     t.string "gender"
     t.string "location"
-    t.boolean "abducted"
+    t.boolean "abducted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

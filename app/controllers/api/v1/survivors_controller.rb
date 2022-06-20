@@ -1,5 +1,5 @@
 class Api::V1::SurvivorsController < Api::V1::BaseController
-  before_action :set_survivor, only: [:show, :update]
+  before_action :set_survivor, only: %i[show update]
 
   def index
     @survivors = Survivor.all
@@ -32,12 +32,10 @@ class Api::V1::SurvivorsController < Api::V1::BaseController
   end
 
   def survivor_params
-    params.require(:survivor).permit(:name, :age, :gender,:location)
+    params.require(:survivor).permit(:name, :age, :gender, :location)
   end
 
   def render_error
-    render json: { errors: @survivor.errors.full_messages },
-      status: :unprocessable_entity
+    render json: { errors: @survivor.errors.full_messages }, status: :unprocessable_entity
   end
-
 end

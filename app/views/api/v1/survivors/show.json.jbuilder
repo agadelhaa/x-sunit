@@ -1,1 +1,1 @@
-json.extract! @survivor, :name, :location
+json.extract! @survivor, :name, :location, :abducted
