@@ -1,0 +1,2 @@
+class Abduction < ApplicationRecord
+end
