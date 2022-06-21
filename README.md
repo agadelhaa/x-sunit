@@ -1,24 +1,17 @@
-# README
+# X-SUNIT
+This system was created to share resources between non-abducted humans.
+Link for the proposed scenario: - [GoCase Intern Challenge](https://github.com/anachronicsofa/gocase-intern-challenge)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hope the aliens never find about it.
+## Version:
+* `Ruby 3.0.3` :gem:
+* `Rails 7.0.3` :monorail:
+* `Postgres (pg latest)` :elephant:
 
-Things you may want to cover:
+## Quick-Setup:
+	$ clone repository
+	$ bundle
+	$ rails db:setup
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## API Documentation:
+- [X-SUNIT](https://documenter.getpostman.com/view/21538394/UzBnrSFJ)
